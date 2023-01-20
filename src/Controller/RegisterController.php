@@ -13,7 +13,7 @@ class RegisterController extends AbstractController
     public function index(UsersRepository $usersRepository): Response
     {
         $users = $usersRepository->findAll();
-        return $this->render('register/index.html.twig', [
+        return $this->render('register.html.twig', [
             'controller_name' => 'RegisterController',
             'users' => $users,
         ]);
@@ -25,7 +25,7 @@ class RegisterController extends AbstractController
         // Créer un nouveau user
         $user = new User();
         // Créer le formulaire et lui donner l
-        $formUser = $this->createForm(TeamType::class, $user);
+        $formUser = $this->createForm(UserType::class, $user);
         // Remplir le formulaire avec les informations de la requête
         $formUser->handleRequest($request);
         // si le formulaire est soumis et qu'il est valide :
@@ -39,7 +39,7 @@ class RegisterController extends AbstractController
             // rediriger vers l'index
             return $this->redirectToRoute('app_register');
         }
-        return $this->render('register/index.html.twig', [
+        return $this->render('register.html.twig', [
                 'formUser' => $formUser->createView()
             ]
         );
@@ -64,7 +64,7 @@ class RegisterController extends AbstractController
             // rediriger vers l'index
             return $this->redirectToRoute('app_register');
         }
-        return $this->render('register/index.html.twig', [
+        return $this->render('register.html.twig', [
                 'formUser' => $formUser->createView()
             ]
         );
