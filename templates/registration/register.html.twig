@@ -1,21 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Connexion{% endblock %}
+
 
 {% block body %}
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    <div class="imgBg d-flex">
+        <div class="bg-white d-flex bg-opacity-50 col-12">
+            <div class="squareForm m-auto col-4 h-70">
+                <h1 class="col-12 text-center text-white">Inscription</h1>
+                <div class="container-fluid">
+                    {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.firstName, { 'attr': {'placeholder': 'Entrez votre prénom' }}) }}
+                    {{ form_row(registrationForm.lastName, { 'attr': {'placeholder': 'Entrez votre nom' }}) }}
+                    {{ form_row(registrationForm.email, { 'attr': {'placeholder': 'Entrez votre email' }}) }}
+                    {{ form_row(registrationForm.plainPassword, { 'attr': {'placeholder': 'Entrez votre mot de passe' }}) }}
+                    {{ form_row(registrationForm.phone, { 'attr': {'placeholder': 'Entrez votre n° de téléphone' }}) }}
+                    <div class="d-flex justify-content-end align-items-end">
+                        <button type="submit" class="btn btnSubmitForm ">Créer mon compte</button>
+                    </div>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
 {% endblock %}

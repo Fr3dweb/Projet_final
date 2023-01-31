@@ -1,14 +1,46 @@
 $blue: #70afee;
 $red: #ff1717;
 
-.textWhite{
-  color:white;
+.nav-link
+{
+  color: white;
 }
-.textWhite:hover{
+
+.nav-link:hover{
   color: #000000;
 }
 
 .colorBgNav
 {
   background-color:$blue;
+}
+
+.imgBg
+{
+  height: 100vh;
+  background-image: url("../../public/images/feuLance.png");
+  background-size: cover ;
+  background-repeat: no-repeat;
+}
+
+.btnSubmitForm{
+  color: white;
+  background-color: $blue;
+
+}
+.btnSubmitForm:hover
+{
+  color:white;
+  background-color: $red;
+}
+
+.form-label {
+  color: white;
+}
+
+.squareForm
+{
+  background-color: black;
+  opacity: 0.80;
+  padding:7px;
 }
