@@ -17,11 +17,26 @@
                     <li class="nav-item d-block">
                         <a class="nav-link fw-semibold" href="{{ path('app_contact') }}">Nous contacter</a>
                     </li>
+
+                    {% if not app.user %}
                     <li class="nav-item d-block">
-                        <a class="nav-link fw-semibold" href="{{ path('app_login') }}"><img class="p-lg-1 pt-0" src="{{ asset("images/avatar.png") }}" alt="Avatar" width="30" height="30">Connexion</a>
+                        <a class="nav-link fw-semibold" href="{{ path('app_login') }}">
+                            <img class="p-lg-1 pt-0" src="{{ asset("images/avatar.png") }}" alt="Avatar" width="30" height="30">
+                            <span>Connexion</span>
+                        </a>
                     </li>
+                    {% else %}
+                        <li class="nav-item d-block">
+                            <a class="nav-link fw-semibold" href="{{ path('app_logout') }}">
+                                <img class="p-lg-1 pt-0" src="{{ asset("images/avatar.png") }}" alt="Avatar" width="30" height="30">
+                                <span>Déconnexion</span>
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
+
