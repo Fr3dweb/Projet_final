@@ -1,6 +1,8 @@
 $blue: #70afee;
 $red: #ff1717;
 
+
+
 .nav-link
 {
   color: white;
@@ -8,6 +10,15 @@ $red: #ff1717;
 
 .nav-link:hover{
   color: #000000;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $red;
 }
 
 .colorBgNav
@@ -32,6 +43,7 @@ $red: #ff1717;
 {
   color:white;
   background-color: $red;
+  transform: scale(1.1);
 }
 
 .form-label {
@@ -43,4 +55,5 @@ $red: #ff1717;
   background-color: black;
   opacity: 0.80;
   padding:7px;
+  border-radius: 10px;
 }

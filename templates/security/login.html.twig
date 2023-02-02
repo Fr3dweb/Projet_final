@@ -1,79 +1,79 @@
-{#{% extends 'base.html.twig' %}#}
+{# {% extends 'base.html.twig' %} #}
 
-{#{% block title %}Connexion{% endblock %}#}
+{# {% block title %}Connexion{% endblock %} #}
 
-{#{% block body %}#}
-{#    {% if error %}#}
-{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
-{#    {% endif %}#}
+{# {% block body %} #}
+{#    {% if error %} #}
+{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div> #}
+{#    {% endif %} #}
 
-{#    {% if app.user %}#}
-{#        <div class="mb-3">#}
-{#            Vous etes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnecter</a>#}
-{#        </div>#}
-{#    {% endif %}#}
+{#    {% if app.user %} #}
+{#        <div class="mb-3"> #}
+{#            Vous etes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnecter</a> #}
+{#        </div> #}
+{#    {% endif %} #}
 
-{#    <div class="imgBg d-flex">#}
-{#        <div class="bg-white d-flex bg-opacity-50 col-12">#}
-{#            <div class="squareForm m-auto col-4 h-70">#}
-{#                <h1 class="col-12 text-center text-white">Connexion</h1>#}
-{#                <div class="container-fluid">#}
-{#                    {{ form_start(LoginForm) }}#}
-{#                    {{ form_row(LoginForm.email, { 'attr': {'placeholder': 'Entrez votre email' }}) }}#}
-{#                    {{ form_row(LoginForm.plainPassword, { 'attr': {'placeholder': 'Entrez votre mot de passe' }}) }}#}
-{#                    <div class="d-flex justify-content-end align-items-end">#}
-{#                        <button type="submit" class="btn btnSubmitForm ">Se connecter</button>#}
-{#                    </div>#}
-{#                    <input type="hidden" name="_csrf_token"#}
-{#                                     value="{{ csrf_token('authenticate') }}">#}
-{#                    {{ form_end(registrationForm) }}#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#    #}{##}
-{#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
-{#        See https://symfony.com/doc/current/security/remember_me.html#}
+{#    <div class="imgBg d-flex"> #}
+{#        <div class="bg-white d-flex bg-opacity-50 col-12"> #}
+{#            <div class="squareForm m-auto col-4 h-70"> #}
+{#                <h1 class="col-12 text-center text-white">Connexion</h1> #}
+{#                <div class="container-fluid"> #}
+{#                    {{ form_start(LoginForm) }} #}
+{#                    {{ form_row(LoginForm.email, { 'attr': {'placeholder': 'Entrez votre email' }}) }} #}
+{#                    {{ form_row(LoginForm.plainPassword, { 'attr': {'placeholder': 'Entrez votre mot de passe' }}) }} #}
+{#                    <div class="d-flex justify-content-end align-items-end"> #}
+{#                        <button type="submit" class="btn btnSubmitForm ">Se connecter</button> #}
+{#                    </div> #}
+{#                    <input type="hidden" name="_csrf_token" #}
+{#                                     value="{{ csrf_token('authenticate') }}"> #}
+{#                    {{ form_end(registrationForm) }} #}
+{#                </div> #}
+{#            </div> #}
+{#        </div> #}
+{#    </div> #}
+{#    #}{# #}
+{#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality. #}
+{#        See https://symfony.com/doc/current/security/remember_me.html #}
 
-{#        <div class="checkbox mb-3">#}
-{#            <label>#}
-{#                <input type="checkbox" name="_remember_me"> Remember me#}
-{#            </label>#}
-{#        </div>#}
+{#        <div class="checkbox mb-3"> #}
+{#            <label> #}
+{#                <input type="checkbox" name="_remember_me"> Remember me #}
+{#            </label> #}
+{#        </div> #}
 {#    #}
-{#{% endblock %}#}
+{# {% endblock %} #}
 
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Lectio. | Login{% endblock %}
+{% block title %} Longo Formation | Connexion {% endblock %}
 
 {% block body %}
 
-    <div class="d-flex h-100 w-100">
-        <div class="m-auto">
-            <h1>We are so glad to see you again.</h1>
+    <div class="imgBg d-flex">
+        <div class="bg-white d-flex bg-opacity-50 col-12">
+            <div class="squareForm m-auto col-4 h-70">
+                <h1 class="col-12 text-center text-white">Bienvenue !</h1>
+                <div class="container-fluid">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
 
-            <div class="container mt-4">
-
-                <form method="post">
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-
-                    {% if app.user %}
+                        {% if app.user %}
+                        <span> Hello {{ user.firstname }}!<span/>
                         <div class="mb-3">
-{#                            {% if user.isLoggedIn %}#}
-{#                                Hello {{ user.name }}!#}
-{#                            {% endif %}#}
-                            Vous êtes identifier en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                            Vous êtes identifier en tant que {{ app.user.userIdentifier }}, <a
+                                    href="{{ path('app_logout') }}">Déconnexion</a>
                         </div>
                     {% endif %}
 
-                    <label for="inputEmail">Email</label>
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
-                    <label for="inputPassword">Password</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control mt-4" autocomplete="current-password" required>
+                    <label class="text-white" for="inputEmail">Email</label>
+                    <input type="email" placeholder="Inscrivez votre e-mail" name="email" id="inputEmail"
+                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
+                    <label class="text-white"  for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control mt-4" placeholder="Inscrivez votre mot de passe"
+                           autocomplete="current-password" required>
 
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
@@ -89,15 +89,29 @@
                         </label>
                     </div>
                     #}
-
-                    <button class="mt-4 btn btn-lg btn-primary rounded-pill" type="submit">
-                        Login
-                    </button>
-                </form>
+                    <div class="d-flex">
+                        <div class="d-flex flex-wrap pt-3">
+                            <p class="link">
+                                <a href={{ path('app_register') }}>
+                                    Mot de passe oublié?
+                                </a>
+                            </p>
+                            <p class="text-white">
+                                Vous n'avez pas de compte?
+                                <a href={{ path('app_register') }}>
+                                    Rejoignez nous!
+                                </a>
+                            </p>
+                        </div>
+                        <div class="justify-content-end col-3">
+                            <button class="btn btnSubmitForm mt-4" type="submit">
+                             Se connecter
+                            </button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <p>You don't have an account ? <a href={{ path('app_register') }}>Join us</a></p>
-
         </div>
     </div>
 {% endblock %}
