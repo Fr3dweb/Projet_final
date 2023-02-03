@@ -1,52 +1,6 @@
-{# {% extends 'base.html.twig' %} #}
-
-{# {% block title %}Connexion{% endblock %} #}
-
-{# {% block body %} #}
-{#    {% if error %} #}
-{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div> #}
-{#    {% endif %} #}
-
-{#    {% if app.user %} #}
-{#        <div class="mb-3"> #}
-{#            Vous etes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnecter</a> #}
-{#        </div> #}
-{#    {% endif %} #}
-
-{#    <div class="imgBg d-flex"> #}
-{#        <div class="bg-white d-flex bg-opacity-50 col-12"> #}
-{#            <div class="squareForm m-auto col-4 h-70"> #}
-{#                <h1 class="col-12 text-center text-white">Connexion</h1> #}
-{#                <div class="container-fluid"> #}
-{#                    {{ form_start(LoginForm) }} #}
-{#                    {{ form_row(LoginForm.email, { 'attr': {'placeholder': 'Entrez votre email' }}) }} #}
-{#                    {{ form_row(LoginForm.plainPassword, { 'attr': {'placeholder': 'Entrez votre mot de passe' }}) }} #}
-{#                    <div class="d-flex justify-content-end align-items-end"> #}
-{#                        <button type="submit" class="btn btnSubmitForm ">Se connecter</button> #}
-{#                    </div> #}
-{#                    <input type="hidden" name="_csrf_token" #}
-{#                                     value="{{ csrf_token('authenticate') }}"> #}
-{#                    {{ form_end(registrationForm) }} #}
-{#                </div> #}
-{#            </div> #}
-{#        </div> #}
-{#    </div> #}
-{#    #}{# #}
-{#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality. #}
-{#        See https://symfony.com/doc/current/security/remember_me.html #}
-
-{#        <div class="checkbox mb-3"> #}
-{#            <label> #}
-{#                <input type="checkbox" name="_remember_me"> Remember me #}
-{#            </label> #}
-{#        </div> #}
-{#    #}
-{# {% endblock %} #}
-
-
 {% extends 'base.html.twig' %}
 
-{% block title %} Longo Formation | Connexion {% endblock %}
+{% block title %} Connexion | Longo Formation {% endblock %}
 
 {% block body %}
 
@@ -61,9 +15,9 @@
                         {% endif %}
 
                         {% if app.user %}
-                        <span> Hello {{ user.firstname }}!<span/>
-                        <div class="mb-3">
-                            Vous êtes identifier en tant que {{ app.user.userIdentifier }}, <a
+                        <span class="text-white"> Hello !<span/>
+                        <div class="mb-3 text-white">
+                            Vous êtes identifier en tant que {{ app.user.firstName }}, <a
                                     href="{{ path('app_logout') }}">Déconnexion</a>
                         </div>
                     {% endif %}
@@ -103,8 +57,8 @@
                                 </a>
                             </p>
                         </div>
-                        <div class="justify-content-end col-3">
-                            <button class="btn btnSubmitForm mt-4" type="submit">
+                        <div class="d-flex justify-content-end col-3">
+                            <button class="btn btnSubmitForm" type="submit">
                              Se connecter
                             </button>
                         </div>

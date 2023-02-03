@@ -1,6 +1,8 @@
 $blue: #70afee;
 $red: #ff1717;
 
+$box-shadow-lg: 0 1rem 3rem $black;
+
 
 
 .nav-link
@@ -37,8 +39,10 @@ a:hover {
 .btnSubmitForm{
   color: white;
   background-color: $blue;
-
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+
 .btnSubmitForm:hover
 {
   color:white;
