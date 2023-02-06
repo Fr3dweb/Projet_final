@@ -15,7 +15,7 @@
                         {% endif %}
 
                         {% if app.user %}
-                        <span class="text-white"> Hello !<span/>
+                        <span class="text-white"> Bonjour !<span/>
                         <div class="mb-3 text-white">
                             Vous êtes identifier en tant que {{ app.user.firstName }}, <a
                                     href="{{ path('app_logout') }}">Déconnexion</a>
@@ -23,10 +23,10 @@
                     {% endif %}
 
                     <label class="text-white" for="inputEmail">Email</label>
-                    <input type="email" placeholder="Inscrivez votre e-mail" name="email" id="inputEmail"
+                    <input type="email" placeholder="Entrer votre e-mail" name="email" id="inputEmail"
                            class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
                     <label class="text-white"  for="inputPassword">Mot de passe</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control mt-4" placeholder="Inscrivez votre mot de passe"
+                    <input type="password" name="password" id="inputPassword" class="form-control mt-4" placeholder="Entrer votre mot de passe"
                            autocomplete="current-password" required>
 
                     <input type="hidden" name="_csrf_token"
@@ -46,7 +46,7 @@
                     <div class="d-flex">
                         <div class="d-flex flex-wrap pt-3">
                             <p class="link">
-                                <a href={{ path('app_register') }}>
+                                <a href={{ path('app_forgot_password_request') }}>
                                     Mot de passe oublié?
                                 </a>
                             </p>
