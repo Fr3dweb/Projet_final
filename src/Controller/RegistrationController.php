@@ -55,7 +55,6 @@ class RegistrationController extends AbstractController
                     ->htmlTemplate('registration/confirmation_email.html.twig')
 
             );
-
 //            return $userAuthenticator->authenticateUser(
 //                $user,
 //                $authenticator,
@@ -64,9 +63,6 @@ class RegistrationController extends AbstractController
 
                    $this->addFlash('success', 'un email de verification vous a été envoyé!');
             return $this->redirectToRoute("app_login");
-
-
-
         }
 
         return $this->render('registration/register.html.twig', [

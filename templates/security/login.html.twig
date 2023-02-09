@@ -2,7 +2,7 @@
 
 {% block title %} Connexion | Longo Formation {% endblock %}
 
-{% block body %}
+{% block myContent %}
 
     <div class="imgBg d-flex">
         <div class="bg-white d-flex bg-opacity-50 col-12">
@@ -11,7 +11,10 @@
                 <div class="container-fluid">
                     <form method="post">
                         {% if error %}
-                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{#                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+                            <div class="alert alert-danger">
+                                <span> {{ error.message }}</span>
+                            </div>
                         {% endif %}
 
                         {% if app.user %}

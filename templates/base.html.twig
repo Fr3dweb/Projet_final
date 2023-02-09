@@ -14,20 +14,22 @@
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
-    {% include('partials/header.html.twig') %}
+
 </head>
+    <body>
+        {% include('partials/header.html.twig') %}
 
-<body>
-    {% for message in app.flashes('success') %}
-        <div class="d-flex justify-content-center">
-            <div class=" alert alert-success position-absolute shadow-lg mb-0 mt-4 p-5">
-                {{ message }}
+                {% block myContent %}
+                    <div class="container">
+            {#            {% for message in app.flashes('success') %}#}
+            {#                <div class="d-flex justify-content-center">#}
+            {#                    <div class=" alert alert-success position-absolute shadow-lg mb-0 mt-4 p-5">#}
+            {#                        {{ message }}#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            {% endfor %}#}
+                {% endblock %}
             </div>
-        </div>
-    {% endfor %}
-{% block body %}
-
-{% endblock %}
-</body>
-{% include('partials/footer.html.twig') %}
+        {% include('partials/footer.html.twig') %}
+    </body>
 </html>

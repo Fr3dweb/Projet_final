@@ -1,9 +1,18 @@
 $blue: #70afee;
 $red: #ff1717;
 
-$box-shadow-lg: 0 1rem 3rem $black;
+nav
+{
+  box-shadow: 3px 5px 5px dimgrey;
+  width: 100%;
+}
 
-
+.container
+{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
 
 .nav-link
 {
@@ -30,15 +39,31 @@ a:hover {
 
 .imgBg
 {
+  width: 100vw;
   height: 100vh;
-  background-image: url("../../public/images/feuLance.png");
+  background-image: url("../../public/build/images/feuLance.png");
   background-size: cover ;
   background-repeat: no-repeat;
+}
+
+.imgMannequin
+{
+  width: 100%;
+  padding: 0;
+  margin-top: 5%;
+  border-radius: 10px;
 }
 
 .btnSubmitForm{
   color: white;
   background-color: $blue;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.btnSubmitForm2{
+  color: white;
+  background-color: $red;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -50,9 +75,21 @@ a:hover {
   transform: scale(1.1);
 }
 
+.btnSubmitForm2:hover
+{
+  color:white;
+  background-color: $blue;
+  transform: scale(1.1);
+}
+
 .form-label {
   color: white;
 }
+
+.form_contact .form-label {
+  color: black;
+}
+
 
 .squareForm
 {

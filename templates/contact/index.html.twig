@@ -2,39 +2,47 @@
 
 {% block title %}Contact | Longo Formation {% endblock %}
 
-{% block body %}
+{% block myContent %}
 
     <div class="d-flex h-100 w-100">
         <div class="m-auto">
             <h1>Nous contacter</h1>
 
+            <div class="form_contact container mt-4">
+                {{ form_start(ContactFormType) }}
+                    {{ form_row(ContactFormType.firstName) }}
+                    {{ form_row(ContactFormType.lastName) }}
+                    {{ form_row(ContactFormType.phone) }}
+                    {{ form_row(ContactFormType.formation) }}
+                    {{ form_row(ContactFormType.comment) }}
+                    <div class="d-flex justify-content-end align-items-end">
+                        <button type="submit" class="btn btnSubmitForm2 ">Envoyer</button>
+                    </div>
+                {{ form_end(ContactFormType) }}
 
 
-
-            <div class="container mt-4">
-                <form method="post">
-                    <label for="inputLastName">Nom: </label>
-                    <input type="text"  name="lastName" id="inputLastName"
-                           class="form-control mt-4 mb-4" autocomplete="lastName" required autofocus>
-                    <label for="inputFirstName">Prénom: </label>
-                    <input type="text" name="email" id="inputFirstName"
-                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
-                    <label for="inputPhone">Téléphone: </label>
-                    <input type="tel" name="email" id="inputPhone"
-                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
-                    <label for="inputRelevantTraining">Formation concernée: </label>
-                    <input type="email" name="email" id="inputRelevantTraining"
-                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
-                    <label for="inputCom">Commentaire: </label>
-                    <input type="text" name="email" id="inputCom"
-                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>
-
-                    <button class="mt-4 btn btn-lg btn-primary rounded-pill" type="submit">
-                        Envoyer
-                    </button>
-                </form>
+{#                <form method="post">#}
+{#                    <label for="inputLastName">Nom: </label>#}
+{#                    <input type="text"  name="lastname" id="inputLastName"#}
+{#                           class="form-control mt-4 mb-4" autocomplete="lastName" required autofocus>#}
+{#                    <label for="inputFirstName">Prénom: </label>#}
+{#                    <input type="text" name="firstname" id="inputFirstName"#}
+{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
+{#                    <label for="inputPhone">Téléphone: </label>#}
+{#                    <input type="tel" name="phone" id="inputPhone"#}
+{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
+{#                    <label for="inputRelevantTraining">Formation concernée: </label>#}
+{#                    <input type="text" name="formation" id="inputRelevantTraining"#}
+{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
+{#                    <label for="inputCom">Commentaire: </label>#}
+{#                    <textarea type="text" name="Commentaire" id="inputCom"#}
+{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
+{#                    </textarea>#}
+{#                    <button class="mt-4 btn btn-lg btn-primary rounded-pill" type="submit"><a href="mailto: admin@longoformation.com"></a>#}
+{#                        Envoyer#}
+{#                    </button>#}
+{#                </form>#}
             </div>
-
         </div>
     </div>
 {% endblock %}

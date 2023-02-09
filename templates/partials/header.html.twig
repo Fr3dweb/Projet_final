@@ -1,6 +1,6 @@
 
 <header>
-    <img class="d-block m-auto" src="{{ asset("images/logoSite.png") }}" alt="Logo du site" width="auto" height="150">
+    <img class="d-block m-auto" src="{{ asset("build/images/logoSite.png") }}" alt="Logo du site" width="auto" height="150">
     <nav class="navbar navbar-expand-lg colorBgNav">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,14 +21,14 @@
                     {% if not app.user %}
                     <li class="nav-item d-block">
                         <a class="nav-link fw-semibold" href="{{ path('app_login') }}">
-                            <img class="p-lg-1 pt-0" src="{{ asset("images/avatar.png") }}" alt="Avatar" width="30" height="30">
+                            <img class="p-lg-1 pt-0" src="{{ asset("build/images/avatar.png") }}" alt="Avatar" width="30" height="30">
                             <span>Connexion</span>
                         </a>
                     </li>
                     {% else %}
                         <li class="nav-item d-block">
                             <a class="nav-link fw-semibold" href="{{ path('app_logout') }}">
-                                <img class="p-lg-1 pt-0" src="{{ asset("images/avatar.png") }}" alt="Avatar" width="30" height="30">
+                                <img class="p-lg-1 pt-0" src="{{ asset("build/images/avatar.png") }}" alt="Avatar" width="30" height="30">
                                 <span>Déconnexion</span>
                             </a>
                         </li>
