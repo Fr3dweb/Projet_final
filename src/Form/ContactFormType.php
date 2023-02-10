@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
@@ -31,27 +32,27 @@ class ContactFormType extends AbstractType
                     'placeholder' => 'Entrez votre nom'
                 ]
             ])
-            ->add('phone', TelType::class, [
-                'label' => 'Téléphone',
+            ->add('email', emailType::class, [
+                'label' => 'Email',
                 'attr' => [
-                    'placeholder' => 'Entrez votre téléphone'
+                    'placeholder' => 'Entrez votre email'
                 ]
             ])
             ->add('formation', ChoiceType::class, [
                 'label' => 'Formation concernée',
                 'attr' => [
-                    'placeholder' => 'Pour quelle formation?',
-                    'choices' => [
-                        'Formation SST',
-                        'Formation MAC SST',
-                        'Formation Equipier de première intervention',
-                        'Formation Premier témoin incendie',
-                        'Equipier d\'intervention'
+                    'placeholder' => 'Pour quelle formation?'
+                ],
+                'choices' => [
+                    'Formation SST' => "SST",
+                    'Formation MAC SST' => "MAC SST",
+                    'Formation Equipier de première intervention' => 'EPI',
+                    'Formation Premier témoin incendie' => 'Temoin incendie',
+                    'Equipier d\'intervention' => 'Equipier Intervention',
                 ]
             ])
             ->add('comment', TextareaType::class, [
                 'label' => 'Commentaire',
-                'mapped' => false,
                 'attr' => [
                     'placeholder' => 'Expliquez votre sujet'
                 ]
