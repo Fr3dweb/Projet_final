@@ -3,21 +3,17 @@
 namespace App\Controller;
 
 use App\Form\ContactFormType;
-use App\Security\EmailVerifier;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ContactController extends AbstractController
 {
-
-    private $emailVerifier;
-
     #[Route('/contact', name: 'app_contact')]
-    public function index(Request $request): Response
+    public function sendEmail(MailerInterface $mailer, Request $request): Response
     {
             $form = $this->createForm(ContactFormType::class);
             $form->handleRequest($request);
@@ -25,17 +21,17 @@ class ContactController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
 
                 $formData =$form -> getData();
-//
-//                $this->emailVerifier->sendEmail(
-//                    new TemplatedEmail())
-//                        ->from($formData ['email'])
-//                        ->to('admin@longoformation.com', 'LongoFormation')
-//                        ->subject('Longo Formation | Vous avez un mail de'. " " .($formData["firstame"]. " " . $formData["lastName"]))
-//                        ->htmlTemplate();
 
-            $this->addFlash('success', 'L\'e-mail a bien été envoyé!');
+                $email = (new Email())
+                        ->from($formData['email'])
+                        ->to('admin@longoformation.com')
+                        ->subject($formData['firstName'].' '.$formData['lastName'].' '.$formData['formation'])
+                        ->text($formData['comment'])
+                        ->html($formData['comment']);
 
+                $mailer->send($email);
 
+                $this->addFlash('success', 'L\'e-mail a bien été envoyé!');
         }
 
         return $this->render('contact/index.html.twig', [
