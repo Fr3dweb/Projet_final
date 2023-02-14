@@ -7,7 +7,6 @@
     <div class="d-flex h-100 w-100">
         <div class="m-auto">
             <h1>Nous contacter</h1>
-
             <div class="form_contact container mt-4">
                 {{ form_start(ContactFormType) }}
                     {{ form_row(ContactFormType.firstName) }}
@@ -19,29 +18,6 @@
                         <button type="submit" class="btn btnSubmitForm2 ">Envoyer</button>
                     </div>
                 {{ form_end(ContactFormType) }}
-
-
-{#                <form method="post">#}
-{#                    <label for="inputLastName">Nom: </label>#}
-{#                    <input type="text"  name="lastname" id="inputLastName"#}
-{#                           class="form-control mt-4 mb-4" autocomplete="lastName" required autofocus>#}
-{#                    <label for="inputFirstName">Prénom: </label>#}
-{#                    <input type="text" name="firstname" id="inputFirstName"#}
-{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
-{#                    <label for="inputPhone">Téléphone: </label>#}
-{#                    <input type="tel" name="phone" id="inputPhone"#}
-{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
-{#                    <label for="inputRelevantTraining">Formation concernée: </label>#}
-{#                    <input type="text" name="formation" id="inputRelevantTraining"#}
-{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
-{#                    <label for="inputCom">Commentaire: </label>#}
-{#                    <textarea type="text" name="Commentaire" id="inputCom"#}
-{#                           class="form-control mt-4 mb-4" autocomplete="email" required autofocus>#}
-{#                    </textarea>#}
-{#                    <button class="mt-4 btn btn-lg btn-primary rounded-pill" type="submit"><a href="mailto: admin@longoformation.com"></a>#}
-{#                        Envoyer#}
-{#                    </button>#}
-{#                </form>#}
             </div>
         </div>
     </div>

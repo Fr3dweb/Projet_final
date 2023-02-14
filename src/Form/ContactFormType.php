@@ -2,17 +2,13 @@
 
 namespace App\Form;
 
-use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 
 class ContactFormType extends AbstractType
@@ -48,7 +44,10 @@ class ContactFormType extends AbstractType
                     'Formation MAC SST' => "MAC SST",
                     'Formation Equipier de première intervention' => 'EPI',
                     'Formation Premier témoin incendie' => 'Temoin incendie',
-                    'Equipier d\'intervention' => 'Equipier Intervention',
+                    'Equipier d\'evacuation(Guides files-Serres files)' => 'Equipier Evac',
+                    'Exercice d\'evacuation' => 'Exercice Evac',
+                    'Troubles Musculo Squelettique (TMS)' => 'TMS',
+                    'Chariots sans CACES (Gerbeur manuel-Transpalette)' => 'CACES',
                 ]
             ])
             ->add('comment', TextareaType::class, [
