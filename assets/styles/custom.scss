@@ -107,6 +107,30 @@ h1 {
   border: 3px solid lime;
 }
 
+.card-1
+{
+  background-image: url("../../public/build/images/rubon117-3317c.png");
+  opacity: 0.3;
+}
+
+.card-2
+{
+  background-image: url("../../public/build/images/extincteur.png");
+  opacity: 0.3;
+}
+
+.card-3
+{
+  background-image: url("../../public/build/images/exercice_evacuation2.png");
+  opacity: 0.3;
+}
+
+.card-4
+{
+  background-image: url("../../public/build/images/tms.png");
+  opacity: 0.3;
+}
+
 .blockImgFormation
 {
   margin-top: 50px;
@@ -116,11 +140,11 @@ h1 {
   border: 3px solid lime;
 }
 
-.imgFormation1 {
+.imgFormation1
+{
   background-image: url("../../public/build/images/img7.png");
-  background-size: contain;
 }
-.imgFormation2 {
-  background-image: url("../../public/build/images/rubon117-3317c.png");
-  background-size: contain;
+.imgFormation2
+{
+  background-image: url("../../public/build/images/img3.png");
 }
