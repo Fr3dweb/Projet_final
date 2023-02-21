@@ -3,40 +3,67 @@
 {% block title %}Formations | Longo Formation{% endblock %}
 
 {% block myContent %}
-    <div class="container d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
         <div>
             <img class="imgMannequin" src="{{ asset('build/images/mannequin.png') }}"
                  alt="Mannequin de formation au massage cardiaque"/>
         </div>
-        <div>
+
+        <div class="title-container">
             <h1 class="text-center">
-                Nos Formations
+                Nos formations
             </h1>
         </div>
-        <div class="d-flex w-100 justify-content-between">
-            <div class="card card-1">
-                    <button class="btnLinkForm" type="button" href="*">Formation initial Sauveteur Secouriste de Travail (SST)</button>
-                    <button class="btnLinkForm" type="button" href="*">Maintien/Actualisation des Compétences SST (MAC SST)</button>
+
+
+        <div class="row justify-content-between">
+
+            <div class="col-md-5">
+                <div class="card card-1">
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id': formations[0].id}) }}">{{ formations[0].title }}</a>
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id':formations[1].id}) }}">{{ formations[1].title }}</a>
+                </div>
             </div>
 
-            <div class="blockImgFormation imgFormation1">
+            <div class="col-md-2">
+                <div class="blockImgFormation imgFormation1">
+
+                </div>
             </div>
-            <div class="card card-2">
-                <button class="btnLinkForm" type="button" href="*">Equipier de première Intervention (EPI)</button>
-                <button class="btnLinkForm" type="button" href="*">Premier temoin incendie</button>
+
+            <div class="col-md-5">
+                <div class="card card-2">
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id': formations[2].id}) }}">{{ formations[2].title }}</a>
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id':formations[3].id}) }}">{{ formations[3].title }}</a>
+                </div>
             </div>
+
+
         </div>
-        <div class="d-flex w-100 justify-content-between">
-            <div class="card card-3">
-                <button class="btnLinkForm" type="button" href="*">Equipier d’évacuation (Guides files - Serres files)</button>
-                <button class="btnLinkForm" type="button" href="*">Exercice d’évacuation</button>
+
+        <div class="row justify-content-between">
+            <div class="col-md-5">
+                <div class="card card-3">
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id': formations[4].id}) }}">{{ formations[4].title }}</a>
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id':formations[5].id}) }}">{{ formations[5].title }}</a>
+                </div>
             </div>
-            <div class="blockImgFormation imgFormation2">
+
+            <div class="col-md-2">
+                <div class="blockImgFormation imgFormation2">
+                </div>
             </div>
-            <div class="card card-4">
-                <button class="btnLinkForm" type="button" href="*">Troubles Musculo Squelettique (TMS)</button>
-                <button class="btnLinkForm" type="button" href="*">Chariots sans CACES (Gerbeur manuel - Transpalette)</button>
+
+            <div class="col-md-5">
+                <div class="card card-4">
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id': formations[6].id}) }}">{{ formations[6].title }}</a>
+                    <a class="linkForm" href="{{ path("app_formations_show", {'id':formations[7].id}) }}">{{ formations[7].title }}</a>
+                </div>
             </div>
+
+
+
+
         </div>
     </div>
 {% endblock %}
