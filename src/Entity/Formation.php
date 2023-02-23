@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\FormationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,8 +25,17 @@ class Formation
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
-    #[ORM\ManyToOne(inversedBy: 'formation')]
-    private ?User $user = null;
+    #[ORM\OneToMany(mappedBy: 'formation', targetEntity: Session::class)]
+    private Collection $sessions;
+
+    #[ORM\ManyToOne(inversedBy: 'formations')]
+    private ?Categories $categories = null;
+
+    public function __construct()
+    {
+        $this->sessions = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -67,15 +78,46 @@ class Formation
         return $this;
     }
 
-    public function getUser(): ?User
+    /**
+     * @return Collection<int, Session>
+     */
+    public function getSessions(): Collection
     {
-        return $this->user;
+        return $this->sessions;
     }
 
-    public function setUser(?User $user): self
+    public function addSession(Session $session): self
     {
-        $this->user = $user;
+        if (!$this->sessions->contains($session)) {
+            $this->sessions->add($session);
+            $session->setFormation($this);
+        }
 
         return $this;
     }
+
+    public function removeSession(Session $session): self
+    {
+        if ($this->sessions->removeElement($session)) {
+            // set the owning side to null (unless already changed)
+            if ($session->getFormation() === $this) {
+                $session->setFormation(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getCategories(): ?Categories
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?Categories $categories): self
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
 }

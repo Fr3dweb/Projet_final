@@ -1,0 +1,14 @@
+nav {
+  box-shadow: 3px 5px 5px dimgrey;
+  width: 100%;
+  background-color: $blue;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: #000000;
+  }
+}

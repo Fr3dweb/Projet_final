@@ -1,0 +1,26 @@
+.form-label {
+  color: white;
+}
+
+.form_contact .form-label {
+  color: black;
+}
+
+.squareForm {
+  background-color: black;
+  opacity: 0.80;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.linkForm {
+  text-align: center;
+  color: white;
+  background-color: $blue;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  width: 97%;
+  border: 3px solid #FFFFFF;
+  border-radius: 10px;
+}

@@ -43,12 +43,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 20)]
     private ?string $phone = null;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Formation::class)]
-    private Collection $formation;
+    #[ORM\ManyToMany(targetEntity: Session::class, mappedBy: 'users')]
+    private Collection $sessions;
+
 
     public function __construct()
     {
-        $this->formation = new ArrayCollection();
+        $this->sessions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -167,30 +168,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Formation>
+     * @return Collection<int, Session>
      */
-    public function getFormation(): Collection
+    public function getSessions(): Collection
     {
-        return $this->formation;
+        return $this->sessions;
     }
 
-    public function addFormation(Formation $formation): self
+    public function addSession(Session $session): self
     {
-        if (!$this->formation->contains($formation)) {
-            $this->formation->add($formation);
-            $formation->setUser($this);
+        if (!$this->sessions->contains($session)) {
+            $this->sessions->add($session);
+            $session->addUser($this);
         }
 
         return $this;
     }
 
-    public function removeFormation(Formation $formation): self
+    public function removeSession(Session $session): self
     {
-        if ($this->formation->removeElement($formation)) {
-            // set the owning side to null (unless already changed)
-            if ($formation->getUser() === $this) {
-                $formation->setUser(null);
-            }
+        if ($this->sessions->removeElement($session)) {
+            $session->removeUser($this);
         }
 
         return $this;

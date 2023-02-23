@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Formation;
+use App\Repository\CategoriesRepository;
 use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,10 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class FormationsController extends AbstractController
 {
     #[Route('/formations', name: 'app_formations')]
-    public function index(FormationRepository $formationRepository): Response
+    public function index(CategoriesRepository $categoriesRepository): Response
     {
         return $this->render('formations/index.html.twig', [
-            'formations' => $formationRepository->findAll()
+            'categories' => $categoriesRepository->findAll()
         ]);
     }
 
@@ -25,5 +26,4 @@ class FormationsController extends AbstractController
             'formation' => $formation
         ]);
     }
-
 }

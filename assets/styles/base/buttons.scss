@@ -1,0 +1,19 @@
+.btnSubmitForm {
+  color: white;
+  background-color: $blue;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    color: white;
+    background-color: $red;
+    transform: scale(1.1);
+  }
+
+  &.bg-red {
+    &:hover {
+      background-color: $blue;
+    }
+  }
+}
