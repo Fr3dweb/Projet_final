@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} {{ formation.title}} | Longo Formation{% endblock %}
+{% block title %} {{ formation.title }} | Longo Formation{% endblock %}
 
 {% block myContent %}
-
-<h1>{{ formation.title }}</h1>
-<p>{{ formation.description }}</p>
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="col-6 my-5 flex-wrap text-center">
+            <h1 class="my-5">{{ formation.title }}</h1>
+            <p>{{ formation.description }}</p>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
 

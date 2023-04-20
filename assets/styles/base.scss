@@ -1,3 +1,9 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width:100%;
+}
+
 a {
   color: $blue;
   text-decoration: none;
@@ -17,4 +23,9 @@ h1 {
   background-color: $blue;
   padding: 0.5rem;
   border-radius: 10px;
+}
+
+.title-container {
+  display: grid;
+  place-content: center;
 }

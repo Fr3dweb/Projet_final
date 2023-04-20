@@ -1,0 +1,18 @@
+.card {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  //379px = barre de scroll & >380px = no barre de scroll
+  max-height: 380px;
+  //overflow-y défini ce qui s'affiche lorsque le contenu dépasse les bords supérieur et inférieur d'un bloc.
+  //Cela peut être rien, une barre de défilement ou le contenu de débordement.
+  overflow-y: auto;
+  min-height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.card a:hover {
+  color: #0d6efd;
+  transition: 0.3s;
+}
