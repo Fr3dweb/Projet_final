@@ -2,31 +2,28 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Formation;
+use App\Entity\Categories;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class FormationCrudController extends AbstractCrudController
+class CategoriesCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Formation::class;
+        return Categories::class;
     }
-
 
     public function configureFields(string $pageName): iterable
     {
         return [
 //            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-//          ImageField::new('image'),
-            AssociationField::new('categories'),
-//            AssociationField::new('sessions'),
+            TextField::new('name'),
+            ImageField::new('image')
+            ->setUploadDir('public/build/images')
+            ->setBasePath('build/images')
         ];
     }
 }

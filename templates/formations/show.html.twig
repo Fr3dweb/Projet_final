@@ -6,8 +6,8 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center ">
             <div class="col-6 my-5 flex-wrap text-center">
-            <h1 class="my-5">{{ formation.title }}</h1>
-            <p>{{ formation.description }}</p>
+            <h1 class="my-5">{{ formation.title |raw }}</h1>
+                {{ formation.description | raw }}
             </div>
         </div>
     </div>
