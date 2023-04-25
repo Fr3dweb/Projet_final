@@ -1,11 +1,12 @@
 nav {
-  box-shadow: 0px 5px 7px dimgrey;
+  box-shadow: 0 5px 7px dimgrey;
   width: 100%;
   background-color: $blue;
 }
 
 .nav-link {
   color: white;
+  font-family: var(--ff-regular);
   font-size: 1.2rem;
 
   &:hover {

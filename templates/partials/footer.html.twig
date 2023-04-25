@@ -1,11 +1,11 @@
-<footer>
+<footer class="mt-5">
     <div class="container">
         <div class="row py-2 d-flex justify-content-around">
-            <div class="col-3">
+            <div class="col-md-6 col-lg-3 my-2">
                 <div class="card-body cardFooter">
                     <div class="d-flex justify-content-center">
                         <div class="roundIcon my-2">
-                            <i class="fa-solid fa-phone-volume" style="color: #ffffff"></i>
+                            <i class="fa-solid fa-phone-volume" style="color: #ffffff; font-size: 1.4rem;"></i>
                         </div>
                     </div>
                     <h4 class="card-title">Téléphone</h4>
@@ -15,20 +15,26 @@
                     </p>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-6 col-lg-3 my-2 ">
                 <div class="card-body cardFooter">
-                    <img class="roundIcon my-2 mx-auto" src="{{ asset("build/images/icon_mail.png") }}" alt="icon mail"
-                         width="45" height="45">
+                    <div class="d-flex justify-content-center">
+                        <div class="roundIcon my-2">
+                            <i class="fa-regular fa-envelope" style="color: #ffffff; font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
                     <h4 class="card-title">Adresse Mail</h4>
                     <p class="card-text my-2">Nous écrire à :<br>
                         longo-formation@hotmail.com
                     </p>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-6 col-lg-3 my-2">
                 <div class="card-body cardFooter">
-                    <img class="roundIcon my-2 p-1" src="{{ asset("build/images/icon_gps.png") }}" alt="icon gps"
-                         width="45" height="45">
+                    <div class="d-flex justify-content-center">
+                        <div class="roundIcon my-2">
+                            <i class="fa-solid fa-location-dot" style="color: #ffffff; font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
                     <h4 class="card-title">Adresse</h4>
                     <p class="card-text my-2">58 Impasse de la croix <br>
                         01640 Saint-Jean-Le-Vieux

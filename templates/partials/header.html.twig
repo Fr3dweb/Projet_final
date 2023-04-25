@@ -6,22 +6,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex justify-content-around col-12">
+                <ul class="navbar-nav d-flex justify-content-between col-12">
                     <li  class="nav-item d-block">
-                    <a class="nav-link fw-semibold" href="{{ path('app_home') }}">Accueil</a>
+                    <a class="nav-link" href="{{ path('app_home') }}">Accueil</a>
                     </li>
                     <li class="nav-item d-block">
-                        <a class="nav-link fw-semibold" aria-current="page" href="{{ path('app_formations') }}">Nos formations</a>
+                        <a class="nav-link" aria-current="page" href="{{ path('app_formations') }}">Nos formations</a>
                     </li>
                     <li class="nav-item d-block">
-                        <a class="nav-link fw-semibold" href="{{ path('app_contact') }}">Nous contacter</a>
+                        <a class="nav-link" href="{{ path('app_contact') }}">Nous contacter</a>
                     </li>
                     <li class="nav-item d-block">
-                        <a class="nav-link fw-semibold" href="#">Photos</a>
+                        <a class="nav-link" href="#">Photos</a>
                     </li>
                     {% if not app.user %}
                     <li class="nav-item d-block">
-                        <a class="nav-link fw-semibold" href="{{ path('app_login') }}">
+                        <a class="nav-link" href="{{ path('app_login') }}">
                             <img class="p-lg-1 pt-0" src="{{ asset("build/images/avatar.png") }}" alt="Avatar" width="30" height="30">
                             <span>Connexion</span>
                         </a>
@@ -29,17 +29,17 @@
                     {% else %}
                         {%  if is_granted('ROLE_ADMIN') %}
                             <li class="mt-2 d-flex">
-                                <a class="nav-link fw-semibold pt-0" href="{{ path('admin') }}">
+                                <a class="nav-link  pt-0" href="{{ path('admin') }}">
                                     <img src="{{ asset("build/images/icon-fireman.png") }}" alt="Avatar" width="25" height="25">
                                     Admin
                                 </a>
                             </li>
                             <li class="nav-item d-block">
-                                <a class="nav-link fw-semibold" href="{{ path('app_logout') }}">Déconnexion</a>
+                                <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
                             </li>
                         {% else %}
                             <li class="nav-item d-block">
-                                <a class="nav-link fw-semibold" href="{{ path('app_logout') }}">
+                                <a class="nav-link" href="{{ path('app_logout') }}">
                                     <img class="p-lg-1 pt-0" src="{{ asset("build/images/avatar.png") }}" alt="Avatar" width="30" height="30">
                                     <span>Déconnexion</span>
                                 </a>

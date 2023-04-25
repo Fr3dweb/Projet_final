@@ -2,7 +2,58 @@
 
 {% block title %}Accueil | Longo Formation{% endblock %}
 {% block myContent %}
-    <div class="my-3">
-        <h1>Formation secourisme et prevention</h1>
+    <div class="container">
+        <div class="row">
+            <div class="mt-5">
+                <h1 class="homeTitle">Formation secourisme et prévention</h1>
+            </div>
+        </div>
+        <div class="mt-5 row justify-content-between text-center bg-blue rounded mx-lg-5 border-blue">
+            <div class="col-lg-8 col-md-6">
+                <article class="h-100 text-white d-flex flex-column justify-content-center">
+                    <h2 class="mb-3">Historique</h2>
+                    <p class="mx-lg-4">
+                        LONGO Formation est un organisme de formation créé par David Longo, en 2022.
+                        Très fortement engagé et impliqué dans le secourisme depuis 2016, c'est tout naturellement qu'il
+                        a décidé de mettre ses compétences et son savoir au service de tous, en créant LONGO Formation.
+                        Toujours à l'affût des dernières nouveautés en matière de règlementation et d'équipement, LONGO
+                        Formation travaille exclusivement avec des partenaires sérieux et expérimentés permettant de
+                        vous proposer les meilleurs moyens pour votre formation.
+                    </p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6 pe-md-0">
+                <img class="img-fluid rounded-end h-100" src="{{ asset('build/images/img4.png') }}"
+                     alt="photo formation de secourisme">
+            </div>
+        </div>
+        <div class="row justify-content-between mt-5">
+            <div class="col-lg-4 col-md-6">
+                <img class="img-fluid" src="{{ asset('build/images/img12.png') }}" alt="image formation incendie">
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <article class="h-100 text-white bg-blue d-flex flex-column justify-content-center">
+                    <h2>Ma Biographie</h2>
+                    <p>
+                        Longo David, sapeur-pompier au sein du SDIS 01 depuis 2016, actuellement au grade de sergent
+                        (Chef
+                        d'agrès d'un engin) et formateur professionnel.
+                        J'ai débuté la formation en 2018 en tant que formateur sapeurs-pompiers pour initier les
+                        nouvelles
+                        recrues. Constamment à la recherche de nouvelles compétences, je décide donc de passer le
+                        monitorat
+                        SAP (Secours à la personne) pour enseigner sur un plus large panel.
+                        Je forme également les collégiens de tout le département au PSCI (Prévention et Secours Civique
+                        de
+                        niveau 1) au sein même des collèges.
+                        J'ai voulu partager mon expérience et mon savoir auprès des entreprises qui sont encore trop
+                        touchées par les accidents de travail.
+                        C'est pour cela que j'ai créé LONGO Formation.
+                        J'aurai l'immense plaisir de vous former, vous apportez mes connaissances et expérience sur les
+                        interventions que je dirige chez les sapeurs-pompiers.
+                    </p>
+                </article>
+            </div>
+        </div>
     </div>
 {% endblock %}
