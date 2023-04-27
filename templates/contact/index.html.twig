@@ -3,21 +3,22 @@
 {% block title %}Contact | Longo Formation {% endblock %}
 
 {% block myContent %}
-
-    <div class="d-flex h-100 w-100">
-        <div class="m-auto">
-            <h1>Nous contacter</h1>
-            <div class="form_contact container mt-4">
-                {{ form_start(ContactFormType) }}
-                    {{ form_row(ContactFormType.firstName) }}
+    <div class="container">
+        <div class="row text-white d-flex justify-content-center align-items-center p-5">
+            <div class="col-lg-5 col-md-6">
+                <h1>Nous contacter</h1>
+                <div class="form_contact">
+                    {{ form_start(ContactFormType) }}
                     {{ form_row(ContactFormType.lastName) }}
+                    {{ form_row(ContactFormType.firstName) }}
                     {{ form_row(ContactFormType.email) }}
                     {{ form_row(ContactFormType.formation) }}
                     {{ form_row(ContactFormType.comment) }}
                     <div class="d-flex justify-content-end align-items-end">
                         <button type="submit" class="btn btnSubmitForm ">Envoyer</button>
                     </div>
-                {{ form_end(ContactFormType) }}
+                    {{ form_end(ContactFormType) }}
+                </div>
             </div>
         </div>
     </div>

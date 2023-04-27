@@ -2,58 +2,107 @@
 
 {% block title %}Accueil | Longo Formation{% endblock %}
 {% block myContent %}
-    <div class="container">
-        <div class="row">
-            <div class="mt-5">
-                <h1 class="homeTitle">Formation secourisme et prévention</h1>
-            </div>
+    <main class="py-5 bg-fire">
+        <div class="container">
+            <section class="row">
+                <div>
+                    <h1 class="homeTitle">Formation secourisme et prévention</h1>
+                </div>
+            </section>
+            {#        Vue HTML pour mobile first puis changement avec "order-md-1" pour desktop #}
+            <section class="mt-5 row justify-content-between text-center bg-blue rounded mx-lg-5">
+                <div class="col-lg-4 col-md-6 pe-md-0 order-md-2">
+                    <img class="img-fluid rounded-end h-100" src="{{ asset('build/images/img4.png') }}"
+                         alt="photo formation de secourisme">
+                </div>
+                <div class="col-lg-8 col-md-6 order-md-1">
+                    <article class="h-100 text-white d-flex flex-column justify-content-center p-lg-4 p-md-2">
+                        <h2 class="p-3">Historique</h2>
+                        <p>
+                            LONGO Formation est un organisme de formation créé par David Longo, en 2022.
+                            Très fortement engagé et impliqué dans le secourisme depuis 2016, c'est tout naturellement
+                            qu'il
+                            a décidé de mettre ses compétences et son savoir au service de tous, en créant LONGO
+                            Formation.
+                            Toujours à l'affût des dernières nouveautés en matière de règlementation et d'équipement,
+                            LONGO
+                            Formation travaille exclusivement avec des partenaires sérieux et expérimentés permettant de
+                            vous proposer les meilleurs moyens pour votre formation.
+                        </p>
+                    </article>
+                </div>
+            </section>
+            <section class="row justify-content-between mt-5">
+                <div class="col-lg-4 col-md-6">
+                    <img class="img-fluid h-100 rounded" src="{{ asset('build/images/img12.png') }}"
+                         alt="image formation incendie">
+                </div>
+                <div class="col-lg-7 col-md-6">
+                    <article
+                            class="h-100 text-white bg-blue d-flex flex-column justify-content-center text-center rounded p-lg-4 p-md-2">
+                        <h2 class="p-3">Ma Biographie</h2>
+                        <p>
+                            Longo David, sapeur-pompier au sein du SDIS 01 depuis 2016, actuellement au grade de sergent
+                            (Chef
+                            d'agrès d'un engin) et formateur professionnel.
+                            J'ai débuté la formation en 2018 en tant que formateur sapeurs-pompiers pour initier les
+                            nouvelles
+                            recrues. Constamment à la recherche de nouvelles compétences, je décide donc de passer le
+                            monitorat
+                            SAP (Secours à la personne) pour enseigner sur un plus large panel.
+                            Je forme également les collégiens de tout le département au PSCI (Prévention et Secours
+                            Civique
+                            de
+                            niveau 1) au sein même des collèges.
+                            J'ai voulu partager mon expérience et mon savoir auprès des entreprises qui sont encore trop
+                            touchées par les accidents de travail.
+                            C'est pour cela que j'ai créé LONGO Formation.
+                            J'aurai l'immense plaisir de vous former, vous apportez mes connaissances et expérience sur
+                            les
+                            interventions que je dirige chez les sapeurs-pompiers.
+                        </p>
+                    </article>
+                </div>
+            </section>
+            <section
+                    class="mt-5 row border-blue d-flex justify-content-around align-items-center text-center rounded mx-lg-5">
+                <div class="col-lg-4 col-md-6 h-100">
+                    <img class="img-fluid" src="{{ asset('build/images/gestes-premiers-secours.png') }}"
+                         alt="illustration d'appel a faire les geste de premiers secours">
+                </div>
+                <div class="col-lg-4 col-md-6 h-100">
+                    <img class="img-fluid" src="{{ asset('build/images/udps87-formation-2.png') }}"
+                         alt="illustration d'une mise en situation de secourisme, en dessin">
+                </div>
+            </section>
+            <section class="row mt-5">
+                <div class="d-flex justify-content-center">
+                    <h3 class="col-lg-3 col-md-6">Nous contacter</h3>
+                </div>
+            </section>
+            <section class="container mt-5">
+                <div class="row d-flex justify-content-between">
+                    <div class="form_contact col-lg-5 col-md-6 h-100">
+                        {{ form_start(ContactFormType) }}
+                        {{ form_row(ContactFormType.lastName) }}
+                        {{ form_row(ContactFormType.firstName) }}
+                        {{ form_row(ContactFormType.email) }}
+                        {{ form_row(ContactFormType.formation) }}
+                        {{ form_row(ContactFormType.comment) }}
+                        <div class="d-flex justify-content-end align-items-end">
+                            <button type="submit" class="btn btnSubmitForm ">Envoyer</button>
+                        </div>
+                        {{ form_end(ContactFormType) }}
+                    </div>
+
+                    <div class="col-lg-5 col-md-6 border-blue p-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11078.890073752149!2d5.396131153111385!3d46.036684949256504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b571a58799bc3%3A0xebd99a9f7ecc0dae!2s58%20Imp.%20de%20la%20Croix%2C%2001640%20Saint-Jean-le-Vieux!5e0!3m2!1sfr!2sfr!4v1682515148400!5m2!1sfr!2sfr"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="mt-5 row justify-content-between text-center bg-blue rounded mx-lg-5 border-blue">
-            <div class="col-lg-8 col-md-6">
-                <article class="h-100 text-white d-flex flex-column justify-content-center">
-                    <h2 class="mb-3">Historique</h2>
-                    <p class="mx-lg-4">
-                        LONGO Formation est un organisme de formation créé par David Longo, en 2022.
-                        Très fortement engagé et impliqué dans le secourisme depuis 2016, c'est tout naturellement qu'il
-                        a décidé de mettre ses compétences et son savoir au service de tous, en créant LONGO Formation.
-                        Toujours à l'affût des dernières nouveautés en matière de règlementation et d'équipement, LONGO
-                        Formation travaille exclusivement avec des partenaires sérieux et expérimentés permettant de
-                        vous proposer les meilleurs moyens pour votre formation.
-                    </p>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6 pe-md-0">
-                <img class="img-fluid rounded-end h-100" src="{{ asset('build/images/img4.png') }}"
-                     alt="photo formation de secourisme">
-            </div>
-        </div>
-        <div class="row justify-content-between mt-5">
-            <div class="col-lg-4 col-md-6">
-                <img class="img-fluid" src="{{ asset('build/images/img12.png') }}" alt="image formation incendie">
-            </div>
-            <div class="col-lg-7 col-md-6">
-                <article class="h-100 text-white bg-blue d-flex flex-column justify-content-center">
-                    <h2>Ma Biographie</h2>
-                    <p>
-                        Longo David, sapeur-pompier au sein du SDIS 01 depuis 2016, actuellement au grade de sergent
-                        (Chef
-                        d'agrès d'un engin) et formateur professionnel.
-                        J'ai débuté la formation en 2018 en tant que formateur sapeurs-pompiers pour initier les
-                        nouvelles
-                        recrues. Constamment à la recherche de nouvelles compétences, je décide donc de passer le
-                        monitorat
-                        SAP (Secours à la personne) pour enseigner sur un plus large panel.
-                        Je forme également les collégiens de tout le département au PSCI (Prévention et Secours Civique
-                        de
-                        niveau 1) au sein même des collèges.
-                        J'ai voulu partager mon expérience et mon savoir auprès des entreprises qui sont encore trop
-                        touchées par les accidents de travail.
-                        C'est pour cela que j'ai créé LONGO Formation.
-                        J'aurai l'immense plaisir de vous former, vous apportez mes connaissances et expérience sur les
-                        interventions que je dirige chez les sapeurs-pompiers.
-                    </p>
-                </article>
-            </div>
-        </div>
-    </div>
+    </main>
 {% endblock %}

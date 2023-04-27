@@ -19,25 +19,37 @@ class ContactFormType extends AbstractType
             ->add('firstName', TextType::class, [
                 'label' => 'Prénom',
                 'attr' => [
-                    'placeholder' => 'Entrez votre prénom'
+                    'placeholder' => 'Entrez votre prénom',
+                ],
+                'row_attr' => [
+                    'class' => "input-form-contact"
                 ]
             ])
             ->add('lastName', TextType::class, [
                 'label' => 'Nom',
                 'attr' => [
                     'placeholder' => 'Entrez votre nom'
+                ],
+                'row_attr' => [
+                    'class' => "input-form-contact"
                 ]
             ])
             ->add('email', emailType::class, [
                 'label' => 'Email',
                 'attr' => [
                     'placeholder' => 'Entrez votre email'
+                ],
+                'row_attr' => [
+                    'class' => "input-form-contact"
                 ]
             ])
             ->add('formation', ChoiceType::class, [
                 'label' => 'Formation concernée',
                 'attr' => [
                     'placeholder' => 'Pour quelle formation?'
+                ],
+                'row_attr' => [
+                    'class' => "input-form-contact"
                 ],
                 'choices' => [
                     'Formation SST' => "SST",
@@ -54,6 +66,9 @@ class ContactFormType extends AbstractType
                 'label' => 'Commentaire',
                 'attr' => [
                     'placeholder' => 'Expliquez votre sujet'
+                ],
+                'row_attr' => [
+                    'class' => "input-form-contact"
                 ]
             ]);
     }
