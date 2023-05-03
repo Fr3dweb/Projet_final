@@ -3,48 +3,38 @@
 {% block title %}Formations | Longo Formation{% endblock %}
 
 {% block myContent %}
+    <section class="bg-title-formation">
+        <h1>Nos Formations</h1>
+    </section>
     <div class="container">
-        <div class="row">
-            <section class="my-4">
-                <img class="imgMannequin" src="{{ asset('build/images/mannequin.png') }}"
-                     alt="Mannequin de formation au massage cardiaque"/>
-            </section>
-        </div>
-        <section>
-            <div class="title-container">
-                <h1 class="text-center">
-                    Nos formations
-                </h1>
-            </div>
-            <div class="row justify-content-between">
-                {% for category in categories %}
-                    {# on vérifie si la boucle est sur pair #}
-                    {% if loop.index is even %}
-                        <div class="col-md-2 mb-3">
-                            {#  loop.index0 fait référence à l'index de l'élément actuel dans une boucle, commençant par 0. Ainsi, si loop.index0 est 0, 1 ou 2,
+        <div class="row mt-5 justify-content-between">
+            {% for category in categories %}
+                {# on vérifie si la boucle est sur pair #}
+                {% if loop.index is even %}
+                    <div class="col-md-2 mb-3">
+                        {#  loop.index0 fait référence à l'index de l'élément actuel dans une boucle, commençant par 0. Ainsi, si loop.index0 est 0, 1 ou 2,
                          alors loop.index0 % 3 renverra respectivement 0, 1 ou 2.
                         Dans ce cas particulier, cette opération est utilisée pour sélectionner une image de fond dans une liste d'images en utilisant la syntaxe de template Twig.
                         L'expression {{ asset("build/images/img" ~ (loop.index0 % 3) ~ ".png") }}
                         renvoie un chemin vers une image dans un répertoire spécifique,
                         en utilisant l'indice de l'élément actuel pour sélectionner l'une des trois images disponibles.
                         La propriété CSS background-image utilise ensuite ce chemin pour définir l'image de fond pour l'élément en question. #}
-                            <div class="blockImgFormation" style="
-                                    background-image: url({{ asset("build/images/img" ~ (loop.index0 % 3) ~ ".png") }});">
-                            </div>
-                        </div>
-                    {% endif %}
-                    <div class="col-md-5 mb-3">
-                        <div class="card" style="background-image:
-                                linear-gradient(to right, rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)),
-                                url({{ asset("build/images/" ~ category.image) }});">
-                            {% for formation in category.formations %}
-                                <a class="linkForm"
-                                   href="{{ path("app_formations_show", {'id': formation.id}) }}">{{ formation.title }}</a>
-                            {% endfor %}
+                        <div class="blockImgFormation" style="
+                                background-image: url({{ asset("build/images/img" ~ (loop.index0 % 3) ~ ".png") }});">
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        </section>
+                {% endif %}
+                <div class="col-md-5 mb-3">
+                    <div class="card" style="background-image:
+                            linear-gradient(to right, rgba(255, 255, 255, .6), rgba(255, 255, 255, .6)),
+                            url({{ asset("build/images/" ~ category.image) }});">
+                        {% for formation in category.formations %}
+                            <a class="linkForm"
+                               href="{{ path("app_formations_show", {'id': formation.id}) }}">{{ formation.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

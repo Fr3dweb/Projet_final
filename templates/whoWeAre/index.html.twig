@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes-nous? | Longo Formation {% endblock %}
+
+{% block myContent %}
+    <div class="bg-grey">
+        <div class="container">
+            <section class="row justify-content-between rounded">
+                {#        Vue HTML pour mobile first puis changement avec "order-md-1" pour desktop #}
+                <div class="col-lg-4 col-md-6 pe-md-0 order-md-2">
+                    <img class="img-fluid rounded h-100" src="{{ asset('build/images/img4.png') }}"
+                         alt="photo formation de secourisme">
+                </div>
+                <div class="col-lg-7 col-6 order-md-1 rounded">
+                    <article class="h-100 d-flex flex-column justify-content-center">
+                        <h2 class="py-2">Historique</h2>
+                        <p>
+                            LONGO Formation est un organisme de formation créé par David Longo, en 2022.
+                            Très fortement engagé et impliqué dans le secourisme depuis 2016, c'est tout
+                            naturellement
+                            qu'il
+                            a décidé de mettre ses compétences et son savoir au service de tous, en créant LONGO
+                            Formation.
+                            Toujours à l'affût des dernières nouveautés en matière de règlementation et
+                            d'équipement,
+                            LONGO
+                            Formation travaille exclusivement avec des partenaires sérieux et expérimentés
+                            permettant de
+                            vous proposer les meilleurs moyens pour votre formation.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="bg-grey">
+        <div class="container">
+            <section class="row justify-content-between">
+                <div class="col-lg-4 col-md-6">
+                    <img class="img-fluid h-100 rounded" src="{{ asset('build/images/img12.png') }}"
+                         alt="image formation incendie">
+                </div>
+                <div class="col-lg-7 col-md-6">
+                    <article
+                            class="h-100 d-flex flex-column justify-content-center rounded">
+                        <h2 class="py-2">Ma Biographie</h2>
+                        <p class="px-3 text-left px-md-0">
+                            Longo David, sapeur-pompier au sein du SDIS 01 depuis 2016, actuellement au grade de
+                            sergent
+                            (Chef
+                            d'agrès d'un engin) et formateur professionnel.
+                            J'ai débuté la formation en 2018 en tant que formateur sapeurs-pompiers pour initier les
+                            nouvelles
+                            recrues. Constamment à la recherche de nouvelles compétences, je décide donc de passer
+                            le
+                            monitorat
+                            SAP (Secours à la personne) pour enseigner sur un plus large panel.
+                            Je forme également les collégiens de tout le département au PSCI (Prévention et Secours
+                            Civique
+                            de
+                            niveau 1) au sein même des collèges.
+                            J'ai voulu partager mon expérience et mon savoir auprès des entreprises qui sont encore
+                            trop
+                            touchées par les accidents de travail.
+                            C'est pour cela que j'ai créé LONGO Formation.
+                            J'aurai l'immense plaisir de vous former, vous apportez mes connaissances et expérience
+                            sur
+                            les
+                            interventions que je dirige chez les sapeurs-pompiers.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

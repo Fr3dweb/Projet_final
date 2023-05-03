@@ -31,6 +31,10 @@
   }
 }
 
+.cardHome{
+
+}
+
 .roundIcon{
   display: flex;
   justify-content: center;
@@ -40,4 +44,12 @@
   height: 60px;
   background-color: $red;
   border-radius: 50px;
+}
+
+.card-title
+{
+  color: $red;
+  font-family: var(--ff-bold);
+  font-size: 1.2rem;
+
 }

@@ -38,4 +38,9 @@ class HomeController extends AbstractController
             'ContactFormType' => $form->createView(),
         ]);
     }
+    #[Route('/whoWeAre', name: 'app_whoWeAre')]
+    public function whoWeAre(): Response
+    {
+        return $this->render('whoWeAre/index.html.twig');
+    }
 }

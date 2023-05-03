@@ -19,7 +19,7 @@ class ContactFormType extends AbstractType
             ->add('firstName', TextType::class, [
                 'label' => 'Prénom',
                 'attr' => [
-                    'placeholder' => 'Entrez votre prénom',
+                    'placeholder' => 'Entrez votre prénom'
                 ],
                 'row_attr' => [
                     'class' => "input-form-contact"
@@ -65,7 +65,8 @@ class ContactFormType extends AbstractType
             ->add('comment', TextareaType::class, [
                 'label' => 'Commentaire',
                 'attr' => [
-                    'placeholder' => 'Expliquez votre sujet'
+                    'placeholder' => 'Expliquez votre sujet',
+                    'style' => 'height:150px'
                 ],
                 'row_attr' => [
                     'class' => "input-form-contact"
