@@ -1,6 +1,7 @@
 #registrationForm .form-label {
   color: #FFFFFF;
 }
+
 .squareForm {
   background-color: black;
   opacity: 0.80;
@@ -9,26 +10,39 @@
 }
 
 .linkForm {
+  display: flex;
   text-align: center;
-  color: white;
-  background-color: $blue;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: $dark-blue;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 1rem;
   width: 97%;
   border: 3px solid #FFFFFF;
   border-radius: 10px;
+  min-height: 90px;
+  transition: all 150ms ease;
+
+  &:hover {
+    background-color: $blue;
+  }
 }
 
-.form_contact{
+a.linkForm {
+  color: #FFFFFF;
+}
+
+.form_contact {
   background: $dark-blue;
   color: #ffffff;
   border: #FFFFFF;
   border-radius: 10px;
-  padding:0.75rem;
+  padding: 0.75rem;
 }
 
-.input-form-contact
-{
+.input-form-contact {
   padding: 5px;
 }

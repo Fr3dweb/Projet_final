@@ -15,12 +15,37 @@
 
 .btn-contact
 {
+  display:block;
+  background-color: $blue;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+  outline-offset: 2px;
+  align-items: center;
+  border-radius: 22px;
+  padding: 10px 10px;
+  transition: background-color 150ms ease;
+
+  &:hover {
+    color: #FFFFFF;
+    background-color: $blue;
+    transform: scale(1.1);
+  }
+}
+
+.btn-card
+{
+  display: block;
   background-color: $blue;
   color: #FFFFFF;
   text-decoration: none;
   outline-offset: 2px;
-  align-items: center;
   border-radius: 22px;
-  padding: 12px 24px;
-  transition: background-color .15s ease;
+  padding: 5px 15px;
+  transition: 300ms;
+
+  &:hover {
+    background-color: $dark-blue;
+    color: #FFFFFF;
+  }
 }

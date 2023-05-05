@@ -2,44 +2,45 @@
 
 {% block title %}Accueil | Longo Formation{% endblock %}
 {% block myContent %}
-    <main>
-        <section class="bg-title-home">
+    <main class="container-md-fluid">
+        <section class=" bg-title bg-title-home">
             <h1>Formation secourisme et prévention</h1>
         </section>
         <div class="bg-grey">
             <section class="container">
-                <div class="row justify-content-around text-center">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ asset('build/images/secourisme1.png') }}" class="card-img-top img-fluid" alt="...">
+                <div class="row m-0 py-md-3 justify-content-center justify-content-md-between text-center">
+                    <div class="cardHome col-11 col-md-3">
+                        <img src="{{ asset('build/images/secourisme1.png') }}" class="card-img-top rounded " alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Secourisme</h5>
-                            <a href="{{ path('app_formations') }}" class="btn btn-contact">En savoir plus</a>
+                            <h5 class="card-title p-2">Secourisme</h5>
+                            <a href="{{ path('app_formations') }}" class="btn-card">En savoir plus</a>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ asset('build/images/extincteur.png') }}" class="card-img-top" alt="...">
+                    <div class="cardHome col-11 col-md-3 mt-3 mt-md-0">
+                        <img src="{{ asset('build/images/extincteur1.png') }}" class="card-img-top rounded" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Incendie</h5>
-                            <a href="{{ path('app_formations') }}" class="btn btn-contact">En savoir plus</a>
+                            <h5 class="card-title p-2">Incendie</h5>
+                            <a href="{{ path('app_formations') }}" class="btn-card">En savoir plus</a>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ asset('build/images/evacuation-incendie.png') }}" class="card-img-top" alt="...">
+                    <div class="cardHome col-11 col-md-3 mt-3 mt-md-0">
+                        <img src="{{ asset('build/images/evacuation-incendie.png') }}" class="card-img-top rounded"
+                             alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Evacuation</h5>
-                            <a href="{{ path('app_formations') }}" class="btn btn-contact">En savoir plus</a>
+                            <h5 class="card-title p-2">Evacuation</h5>
+                            <a href="{{ path('app_formations') }}" class="btn-card">En savoir plus</a>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
         <div class="container">
-            <section class="row justify-content-between mx-5 mx-lg-0">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <img class="img-fluid pt-4" src="{{ asset('build/images/gestes-premiers-secours.png') }}"
+            <section class="row m-0 justify-content-center justify-content-md-between">
+                <div class="col-md-4">
+                    <img class="img-fluid py-2" src="{{ asset('build/images/gestes-premiers-secours.png') }}"
                          alt="illustration d'appel a faire les geste de premiers secours">
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-md-4">
                     <img class="img-fluid" src="{{ asset('build/images/udps87-formation-2.png') }}"
                          alt="illustration d'une mise en situation de secourisme, en dessin">
                 </div>
@@ -47,26 +48,30 @@
         </div>
         <div class="bg-grey">
             <div class="container">
-                <div class="d-flex justify-content-between flex-wrap py-1">
-                    <div class="form_contact col-lg-5 col-md-4 h-100">
+                <div class="row mx-1 mx-md-0 justify-content-md-between py-1">
+                    <div class="form_contact col-md-12 h-100">
                         {{ form_start(ContactFormType) }}
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 {{ form_row(ContactFormType.lastName) }}
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 ">
                                 {{ form_row(ContactFormType.firstName) }}
                             </div>
+                            <div class="col-md-6">
+                            {{ form_row(ContactFormType.email) }}
+                            </div>
+                            <div class="col-md-6">
+                            {{ form_row(ContactFormType.formation) }}
+                            </div>
                         </div>
-                        {{ form_row(ContactFormType.email) }}
-                        {{ form_row(ContactFormType.formation) }}
                         {{ form_row(ContactFormType.comment) }}
                         <div class="d-flex justify-content-end align-items-end pe-2">
                             <button type="submit" class="btn btnSubmitForm ">Envoyer</button>
                         </div>
                         {{ form_end(ContactFormType) }}
                     </div>
-                    <div class="col-lg-5 col-md-4">
+                    <div class="col-md-12 pt-5 px-0">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11078.890073752149!2d5.396131153111385!3d46.036684949256504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b571a58799bc3%3A0xebd99a9f7ecc0dae!2s58%20Imp.%20de%20la%20Croix%2C%2001640%20Saint-Jean-le-Vieux!5e0!3m2!1sfr!2sfr!4v1682515148400!5m2!1sfr!2sfr"
                                 width="100%" height="100%" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">

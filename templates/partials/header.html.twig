@@ -1,26 +1,26 @@
 <header>
     <div class="container">
-        <section class="row d-flex justify-content-between">
-            <div class="col-lg-3 col-4">
+        <section class="row pb-2 pb-md-0">
+            <div class="col-md-4 col-lg-3">
                 <a href="{{ path('app_home') }}" target="_self">
-                    <img class="logo p-lg-0" src="{{ asset("build/images/logoSite.png") }}" alt="Logo du site">
+                    <img class="logo" src="{{ asset("build/images/logoSite.png") }}" alt="Logo du site">
                 </a>
             </div>
-            <div class="d-flex justify-content-evenly align-items-center col-lg-3 col-6">
+            <div class="m-auto me-md-0 text-center col-6 col-md-3 col-lg-2 pt-1">
                 {% if not app.user %}
                     <div class="nav-item d-block">
-                        <a href="{{ path('app_login') }}">
-                            <img class="p-lg-1 pt-0" src="{{ asset("build/images/avatar.png") }}" alt="Avatar"
-                                 width="30" height="30">
-                            <span>Connexion</span>
+                        <a href="{{ path('app_login') }}" class="nav-link">
+                            <img src="{{ asset("build/images/avatar.png") }}" alt="Avatar"
+                                 width="35" height="35">
+                            Connexion
                         </a>
                     </div>
                 {% else %}
                     {% if is_granted('ROLE_ADMIN') %}
-                        <div class="mt-2 d-flex">
+                        <div class="">
                             <a class="pt-0" href="{{ path('admin') }}">
-                                <img src="{{ asset("build/images/icon-fireman.png") }}" alt="Avatar" width="25"
-                                     height="25">
+                                <img src="{{ asset("build/images/icon-fireman.png") }}" alt="Avatar" width="30"
+                                     height="30">
                                 Admin
                             </a>
                         </div>
@@ -32,17 +32,17 @@
                             <a href="{{ path('app_logout') }}">
                                 <img class="p-lg-1 pt-0" src="{{ asset("build/images/avatar.png") }}" alt="Avatar"
                                      width="30" height="30">
-                                <span>Déconnexion</span>
+                                Déconnexion
                             </a>
                         </div>
                     {% endif %}
                 {% endif %}
-                <div>
-                    {#                  L'attribut rel="nofollow" indique au robot qu'il ne doit pas suivre le lien, qu'il ne compte pas pour le referencement  #}
-                    {#                  L'attribut target="_self" indique que la page sera ouverte dans la même fenêtre que la page actuelle. #}
-                    <a class="btn-contact" href="{{ path('app_contact') }}" rel="nofollow"
-                       target="_self">Nous contacter</a>
-                </div>
+            </div>
+            <div class="m-auto mx-md-0 col-6 col-md-3 col-lg-2">
+                {#                  L'attribut rel="nofollow" indique au robot qu'il ne doit pas suivre le lien, qu'il ne compte pas pour le referencement  #}
+                {#                  L'attribut target="_self" indique que la page sera ouverte dans la même fenêtre que la page actuelle. #}
+                <a class="btn-contact" href="{{ path('app_contact') }}" rel="nofollow"
+                   target="_self">Nous contacter</a>
             </div>
         </section>
     </div>
